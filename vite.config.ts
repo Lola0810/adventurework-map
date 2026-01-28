@@ -25,6 +25,7 @@ export default defineConfig({
     base: "./",
     build: {
         sourcemap: true,
+        manifest: true,
         rollupOptions: {
             input: {
                 index: "./index.html",
