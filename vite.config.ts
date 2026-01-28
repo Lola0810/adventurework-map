@@ -24,14 +24,16 @@ if (process.env.TILESET_OPTIMIZATION && process.env.TILESET_OPTIMIZATION === "tr
 export default defineConfig({
     base: "./",
     build: {
-        sourcemap: true,
-        manifest: true,
-        rollupOptions: {
-            input: {
-                index: "./index.html",
-                ...getMapsScripts(maps),
-            },
+      sourcemap: true,
+      manifest: true,
+      emptyOutDir: true,
+      rollupOptions: {
+        preserveEntrySignatures: 'strict',
+        input: {
+          index: "./index.html",
+          ...getMapsScripts(maps),
         },
+      },
     },
     plugins: [...getMapsOptimizers(maps, optimizerOptions)],
     server: {
