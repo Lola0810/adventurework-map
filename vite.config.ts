@@ -28,10 +28,11 @@ export default defineConfig({
         rollupOptions: {
             input: {
                 index: "./index.html",
-…getMapsScripts(maps)
+                ...getMapsScripts(maps),
             },
         },
     },
+    plugins: [...getMapsOptimizers(maps, optimizerOptions)],
     server: {
         host: "localhost",
         headers: {
