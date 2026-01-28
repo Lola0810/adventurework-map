@@ -28,7 +28,6 @@ export default defineConfig({
       manifest: true,
       emptyOutDir: true,
       rollupOptions: {
-        preserveEntrySignatures: 'strict',
         input: {
           index: "./index.html",
           ...getMapsScripts(maps),
