@@ -27,12 +27,10 @@ export default defineConfig({
         sourcemap: true,
         rollupOptions: {
             input: {
-                index: "./index.html",
-                ...getMapsScripts(maps),
+                index: "./index.html"
             },
         },
     },
-    plugins: [...getMapsOptimizers(maps, optimizerOptions)],
     server: {
         host: "localhost",
         headers: {
